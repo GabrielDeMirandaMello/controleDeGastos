@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_release"
+        android:title="@string/menu_release"
+        android:icon="@drawable/ic_menu_release"/>
+    <item android:id="@+id/menu_added_releases"
+        android:title="Adicionar"
+        android:icon="@drawable/ic_menu_add"/>
+    <item android:id="@+id/menu_report"
+        android:title="@string/menu_report"
+        android:icon="@drawable/ic_menu_report"/>
+</menu>

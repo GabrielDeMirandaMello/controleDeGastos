@@ -1,5 +1,7 @@
 package com.devgabriel.controlefinanceiro
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.devgabriel.controlefinanceiro.databinding.ActivityMainBinding
@@ -11,4 +13,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
 }

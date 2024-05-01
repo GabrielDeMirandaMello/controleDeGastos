@@ -2,4 +2,12 @@
     <string name="app_name">Controle De Gastos</string>
     <string name="come_ar">Começar</string>
     <string name="digite_aqui_seu_nome">Digite aqui seu Nome</string>
+    <string name="title_activity_lancamento">LancamentoActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_release">Lançamentos</string>
+    <string name="menu_report">Relatório</string>
 </resources>

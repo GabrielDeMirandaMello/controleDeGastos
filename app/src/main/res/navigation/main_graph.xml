@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/menu_release">
+
+    <fragment
+        android:id="@+id/menu_release"
+        android:name="com.devgabriel.controlefinanceiro.ReleasesFragment"
+        android:label="fragment_releases"
+        tools:layout="@layout/fragment_releases" >
+        <action
+            android:id="@+id/action_releasesFragment_to_reportFragment"
+            app:destination="@id/menu_report" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_report"
+        android:name="com.devgabriel.controlefinanceiro.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_reportFragment_to_releasesFragment"
+            app:destination="@id/menu_release" />
+    </fragment>
+</navigation>
