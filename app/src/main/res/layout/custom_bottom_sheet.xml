@@ -17,6 +17,7 @@
             android:textAlignment="center"
             android:text="Adicionando Gasto"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins"
             android:textColor="@color/white"
             android:textSize="24sp"

@@ -9,7 +9,8 @@
         android:id="@+id/menu_release"
         android:name="com.devgabriel.controlefinanceiro.ReleasesFragment"
         android:label="fragment_releases"
-        tools:layout="@layout/fragment_releases" >
+        tools:layout="@layout/fragment_releases"
+        >
         <action
             android:id="@+id/action_releasesFragment_to_reportFragment"
             app:destination="@id/menu_report" />
