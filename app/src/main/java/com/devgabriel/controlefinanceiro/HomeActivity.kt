@@ -15,6 +15,7 @@ import com.devgabriel.controlefinanceiro.databinding.CustomBottomSheetBinding
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeActivity : AppCompatActivity() {
 
@@ -27,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
 
         initNavigation()
 
-        val bottomNavigation = findViewById<BottomNavigationItemView>(R.id.menu_added_releases)
+        val bottomNavigation = findViewById<FloatingActionButton>(R.id.added_releases)
         bottomNavigation.setOnClickListener {
             showBottomSheetDialog()
         }
