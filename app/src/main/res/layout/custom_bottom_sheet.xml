@@ -34,6 +34,7 @@
             android:textSize="14sp"
             />
         <EditText
+            android:id="@+id/nameDespesa"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@drawable/bg_add_edit_text"
@@ -55,6 +56,7 @@
             android:textSize="14sp"
             />
         <EditText
+            android:id="@+id/valorDespesa"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@drawable/bg_add_edit_text"
@@ -77,6 +79,7 @@
             android:textSize="14sp"
             />
         <EditText
+            android:id="@+id/dataDespesa"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@drawable/bg_add_edit_text"
@@ -89,6 +92,7 @@
             android:textColor="@color/verde_padrao"
             />
         <Button
+            android:id="@+id/btnAdicionarDespesa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"

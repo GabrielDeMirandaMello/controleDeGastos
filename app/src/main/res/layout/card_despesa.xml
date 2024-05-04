@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/background_btn_login"
+    android:orientation="horizontal"
+    android:paddingHorizontal="30dp"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:id="@+id/nameLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:maxWidth="150dp"
+        android:paddingVertical="15dp"
+        android:text="Comida"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/dataLancamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/valorLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:paddingVertical="15dp"
+        android:text="R$ 25,90"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/excluirLancamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/excluirLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_excluir"
+        android:fontFamily="@font/poppins"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:text="Excluir"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLancamento" />
+
+    <TextView
+        android:id="@+id/dataLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_data"
+        android:fontFamily="@font/poppins"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:text="06/05/2024"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLancamento" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
