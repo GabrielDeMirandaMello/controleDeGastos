@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "300679986914",
+    "project_id": "controle-de-gastos-aa7f1",
+    "storage_bucket": "controle-de-gastos-aa7f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300679986914:android:a9f3ba4524e9ee0a1228bb",
+        "android_client_info": {
+          "package_name": "com.devgabriel.controlefinanceiro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzRLQPDZmoUV4j0kzpDBBOYJRRHulqAWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Adicionando Gasto"
+            android:text="Novo Gasto"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins"

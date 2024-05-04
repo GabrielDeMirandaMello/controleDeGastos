@@ -1,21 +1,21 @@
 package com.devgabriel.controlefinanceiro
 
+import android.graphics.Color
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.devgabriel.controlefinanceiro.databinding.ActivityHomeBinding
 import com.devgabriel.controlefinanceiro.databinding.CustomBottomSheetBinding
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeActivity : AppCompatActivity() {
 
@@ -47,8 +47,50 @@ class HomeActivity : AppCompatActivity() {
 
         val sheetBinding: CustomBottomSheetBinding =
             CustomBottomSheetBinding.inflate(layoutInflater, null, false)
-
         dialog.setContentView(sheetBinding.root)
+
+        sheetBinding.btnAdicionarDespesa.setOnClickListener {
+            addDespesa(sheetBinding)
+        }
+        with(dialog.behavior) {
+            state = BottomSheetBehavior.STATE_EXPANDED
+        }
         dialog.show()
+    }
+    private fun addDespesa(sheetBinding: CustomBottomSheetBinding) {
+        var nome = sheetBinding.nameDespesa.text.toString()
+        var valor = "R$ " + sheetBinding.valorDespesa.text.toString()
+        var data = sheetBinding.dataDespesa.text.toString()
+
+
+        val despesa = hashMapOf(
+            "nome" to nome,
+            "valor" to valor,
+            "data" to data
+        )
+
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("despesas")
+            .add(despesa)
+            .addOnSuccessListener { documentReference ->
+                Log.d("TAG", "Despesa adicionada com ID: ${documentReference.id}")
+                exibirSnackBar("Despesa adicionada com sucesso")
+                // Fechar a Activity atual
+                finish()
+            }
+            .addOnFailureListener { e ->
+                Log.w("TAG", "Erro ao adicionar despesa", e)
+                exibirSnackBar("Erro ao adicionar despesa")
+            }
+    }
+    fun exibirSnackBar(mensagem: String) {
+
+        Snackbar.make(
+            findViewById(android.R.id.content),
+            mensagem,
+            Snackbar.LENGTH_SHORT
+        ).show()
+
     }
 }
