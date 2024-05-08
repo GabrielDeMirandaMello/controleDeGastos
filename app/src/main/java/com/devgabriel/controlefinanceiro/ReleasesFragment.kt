@@ -1,5 +1,7 @@
 package com.devgabriel.controlefinanceiro
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +16,9 @@ import com.devgabriel.controlefinanceiro.databinding.FragmentReleasesBinding
 import com.devgabriel.controlefinanceiro.models.Despesa
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class ReleasesFragment : Fragment() {
     private lateinit var binding: FragmentReleasesBinding
@@ -34,9 +39,30 @@ class ReleasesFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = DespesaAdapter
 
+        var db = Firebase.firestore
+
+        db.collection("despesas").get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d("TAG", "DocumentSnapshot data: ${document.documents.size}")
+                } else {
+                    Log.d("TAG", "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("TAG", "get failed with ", exception)
+            }
+
         DespesaAdapter.updateData(dataSource)
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        val sharedPreferences = requireContext().getSharedPreferences("Usuario", Context.MODE_PRIVATE)
+        val username = sharedPreferences.getString("username", "-------")
+
+        binding.usenameTitle.text = username
+    }
 
 }

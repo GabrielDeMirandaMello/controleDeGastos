@@ -1,5 +1,6 @@
 package com.devgabriel.controlefinanceiro
 
+import android.content.Context
 import android.graphics.Color
 import android.nfc.Tag
 import android.os.Bundle
@@ -68,19 +69,20 @@ class HomeActivity : AppCompatActivity() {
             "valor" to valor,
             "data" to data
         )
-
+        val sharedPreferences = getSharedPreferences("Usuario", Context.MODE_PRIVATE)
+        val username = sharedPreferences.getString("username", "-------")
         val db = FirebaseFirestore.getInstance()
 
         db.collection("despesas")
-            .add(despesa)
+            .document(username.toString()).set(despesa)
             .addOnSuccessListener { documentReference ->
-                Log.d("TAG", "Despesa adicionada com ID: ${documentReference.id}")
+                Log.d("TAG", "Despesa adicionada com ID: ${documentReference}")
                 exibirSnackBar("Despesa adicionada com sucesso")
                 // Fechar a Activity atual
                 finish()
             }
             .addOnFailureListener { e ->
-                Log.w("TAG", "Erro ao adicionar despesa", e)
+                Log.w("TAG", e.cause.toString(), e)
                 exibirSnackBar("Erro ao adicionar despesa")
             }
     }
