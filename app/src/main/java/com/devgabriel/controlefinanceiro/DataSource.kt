@@ -1,6 +1,6 @@
 package com.devgabriel.controlefinanceiro
 
-import com.devgabriel.controlefinanceiro.models.Despesa
+import com.devgabriel.controlefinanceiro.local.models.Despesa
 
 class DataSource {
 

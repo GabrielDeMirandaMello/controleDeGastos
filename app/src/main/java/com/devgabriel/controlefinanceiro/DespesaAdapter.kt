@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.devgabriel.controlefinanceiro.databinding.CardDespesaBinding
 import com.devgabriel.controlefinanceiro.databinding.FragmentReleasesBinding
-import com.devgabriel.controlefinanceiro.models.Despesa
+import com.devgabriel.controlefinanceiro.local.models.Despesa
 
 class DespesaAdapter(
     private val context: Context,

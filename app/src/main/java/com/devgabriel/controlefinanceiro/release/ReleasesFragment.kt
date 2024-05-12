@@ -1,22 +1,17 @@
-package com.devgabriel.controlefinanceiro
+package com.devgabriel.controlefinanceiro.release
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.devgabriel.controlefinanceiro.databinding.CustomBottomSheetBinding
+import com.devgabriel.controlefinanceiro.DataSource
+import com.devgabriel.controlefinanceiro.DespesaAdapter
 import com.devgabriel.controlefinanceiro.databinding.FragmentReleasesBinding
-import com.devgabriel.controlefinanceiro.models.Despesa
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.firestore
+import com.devgabriel.controlefinanceiro.local.models.Despesa
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 

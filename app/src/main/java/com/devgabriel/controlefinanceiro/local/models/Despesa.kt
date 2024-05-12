@@ -1,4 +1,4 @@
-package com.devgabriel.controlefinanceiro.models
+package com.devgabriel.controlefinanceiro.local.models
 
 import java.util.Date
 

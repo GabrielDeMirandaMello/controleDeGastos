@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menu_release"
-        android:name="com.devgabriel.controlefinanceiro.ReleasesFragment"
+        android:name="com.devgabriel.controlefinanceiro.release.ReleasesFragment"
         android:label="fragment_releases"
         tools:layout="@layout/fragment_releases"
         >
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/menu_report"
-        android:name="com.devgabriel.controlefinanceiro.ReportFragment"
+        android:name="com.devgabriel.controlefinanceiro.report.ReportFragment"
         android:label="fragment_report"
         tools:layout="@layout/fragment_report" >
         <action

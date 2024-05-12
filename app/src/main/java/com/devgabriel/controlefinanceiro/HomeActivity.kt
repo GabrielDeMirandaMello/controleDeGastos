@@ -1,10 +1,8 @@
 package com.devgabriel.controlefinanceiro
 
 import android.content.Context
-import android.graphics.Color
-import android.nfc.Tag
+
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -16,7 +14,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeActivity : AppCompatActivity() {
 
@@ -71,20 +68,7 @@ class HomeActivity : AppCompatActivity() {
         )
         val sharedPreferences = getSharedPreferences("Usuario", Context.MODE_PRIVATE)
         val username = sharedPreferences.getString("username", "-------")
-        val db = FirebaseFirestore.getInstance()
 
-        db.collection("despesas")
-            .document(username.toString()).set(despesa)
-            .addOnSuccessListener { documentReference ->
-                Log.d("TAG", "Despesa adicionada com ID: ${documentReference}")
-                exibirSnackBar("Despesa adicionada com sucesso")
-                // Fechar a Activity atual
-                finish()
-            }
-            .addOnFailureListener { e ->
-                Log.w("TAG", e.cause.toString(), e)
-                exibirSnackBar("Erro ao adicionar despesa")
-            }
     }
     fun exibirSnackBar(mensagem: String) {
 
